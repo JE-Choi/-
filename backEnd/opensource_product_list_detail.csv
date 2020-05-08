@@ -1,0 +1,72 @@
+1,elasticsearch,검색엔진
+2,kubernetes,클러스터관리 SW
+3,openwhisk,serverless 플랫폼
+4,node.js,네트워크 어플리케이션
+5,zookeeper,코디네이션 서비스
+6,redis,No SQL
+7,hbase,
+8,memcached,분산캐시시스템
+9,kibana,데이터분석툴
+10,haproxy,로드밸런서
+11,Grafana,메트릭 모니터링/분석 플랫폼
+12,vert.x,서버프레임워크
+13,Rhino,자바스크립트 엔진
+14,Flask,웹 프레임워크
+15,Putty,터미널 에뮬레이터
+16,FileZilla,FTP 소프트웨어
+17,Suricata,IDS
+18,TensorFlow,오픈소스 패키지
+19,Bootstrap,프론트엔드 프레임워크
+20,D3.js,데이터 시각화 프레임 워크
+21,Angularjs,Js 프레임워크
+22,OpenStack,클라우드 구축 플랫폼
+23,Eclipse,프로그래밍 통합 개발 환경
+24,jenkins,CI 서버
+25,hadoop,
+26,consul,
+27,storm,대용량데이터분석
+28,Git,소스코드 관리 툴
+29,Django,웹 프레임워크
+30,nginx,웹서버
+31,docker,docker
+32,OpenSSL,SSL/TLS
+33,snort,IDS
+34,PostgreSQL,ORDBMS
+35,MariaDB,RDBMS
+36,Spark,대용량 분산처리
+37,Ethereum,분산 컴퓨팅 플랫폼
+38,npm,자바스크립트 프로그래밍 언어를 위한 패키지 관리자
+39,Gitlab,깃 저장소와 이슈 추적 기능을 갖춘 웹 기반의 데브옵스 시스템
+40,Openvpn,VPN 소프트웨어
+41,Rstudio,통계 및 그래픽을 위한 무료 소프트웨어 환경
+42,JQuery,자바스크립트 라이브러리
+43,Virtualbox,가상 컴퓨터 환경
+44,WordPress,저작물 관리 시스템
+45,Reactjs,프론트엔드 웹 애플리케이션 프레임워크
+46,cygwin,자유 소프트웨어 모음집
+47,OpenShift,컨테이너 기반 소프트웨어의 디플로이 및 관리 프로그램
+48,OpenSolaris,운영체제
+49,Chromium,웹 브라우저 소프트웨어
+50,Blender,3D Development tool
+51,LibreOffice,오피스 프로그램
+52,FreeNAS,NAS
+53,Qt,플랫폼 프레임워크
+54,pfSense,방화벽
+55,QEMU,가상화 소프트웨어
+56,dragonfly,파일 분산시스템
+57,Dolphin,KDE용 파일 관리자
+58,Puppet,서버 관리 소프트웨어
+59,Jetty,자바 웹 서버/자바 서블릿 컨테이너
+60,Piwik,분석 플랫폼
+61,imagemagick,그래픽 이미지 생성 및 수정 프로그램
+62,Symfony,PHP 웹 프레임워크
+63,Bugzilla,웹 기반의 버그 추적기 및 테스트 도구
+64,Vagrant,가상화 소프트웨어 개발 환경
+65,LXC,리눅스 컨테이너
+66,ReactOS,운영체제
+67,Mattermost,채팅 관련 인터페이스 제공
+68,Clang,컴파일러 프론트엔드
+69,Plone,컨텐트 관리 시스템
+70,SugarCRM,메일 통계 솔루션
+71,mongodb,No SQL
+72,mysql,RDBMS

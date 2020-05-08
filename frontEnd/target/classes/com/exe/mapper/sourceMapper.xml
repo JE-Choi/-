@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-/mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="sourcemapper">
+
+<!-- 회원정보입력 -->
+<insert id="insertUser" parameterType="com.exe.dto.UserDTO">
+	insert into member (user_id, user_name, user_password, user_email, user_phonenumber)
+	values (#{user_id}, #{user_name}, #{user_password}, #{user_email}, #{user_phonenumber})
+</insert>
+
+<!-- UserId로 검색 (회원 정보 수정, 등등 할 때 필요)-->
+<select id="getReadUserData" parameterType="String" resultType="com.exe.dto.UserDTO">
+	select  user_id, user_name, user_password, user_email, user_phonenumber from member
+	where user_id=#{userId}
+</select>
+
+
+<!-- 회원정보수정 -->
+<update id="updateUserData" parameterType="com.exe.dto.UserDTO">
+	update member set
+	user_name=#{user_name}, user_password=#{user_password}, user_email=#{user_email}, 
+	user_phonenumber=#{user_phonenumber}
+	where user_id=#{user_id}
+</update>
+
+<delete id="deleteUserData" parameterType="String">
+	delete from member where userId=#{userId}
+</delete>
+
+
+<!-- 미완성 시작 -->
+
+<!-- main페이지 product_id 관한 쿼리 -->
+<!-- Product 취약점 리스트 반환 -->
+<select id="getListData" resultType="com.exe.dto.ListDTO">
+	select product_id, product_name, vulnerability_number from product
+	order by product_id
+</select>
+
+<!-- final_details 페이지 resource 관한 쿼리 -->
+<select id="getReference"  parameterType="String" resultType="com.exe.dto.FinalDTO">
+	select cve_link, cve_resource
+	from reference
+	where cve_id=#{cve_id}
+</select>
+
+<!--  final_details 페이지 details 관한 쿼리 -->
+<select id="getDetails"  parameterType="String" resultType="com.exe.dto.DetailsDTO">
+select distinct cve_id, vulnerability_description
+from details
+where cve_id=#{cve_id}
+</select>
+
+<!-- details 페이지 cve_id 관한 쿼리 -->
+<select id="getDetails2"  parameterType="String" resultType="com.exe.dto.DetailsDTO">
+	select product_id, cve_id, vulnerability_type, publish_date, vulnerability_score
+	from details
+	where product_id=#{product_id}
+	order by product_id desc
+</select>
+
+<select id="getBarGraph"  parameterType="String" 
+resultType="com.exe.dto.DetailsDTO">
+SELECT count(distinct cve_id) count, substr(publish_date,-4) publish_date
+FROM details 
+WHERE product_id = #{product_id}
+group by substr(publish_date,-4)
+order by substr(publish_date,-4)
+LIMIT 4
+</select>
+
+
+<!-- 원형그래프 -->
+<select id="getHigh"  parameterType="String" resultType="int">
+SELECT count(distinct cve_id) 
+FROM details 
+WHERE product_id  = #{product_id}
+and vulnerability_score LIKE "%HIGH%" 
+</select>
+
+<select id="getMedium"  parameterType="String" resultType="int">
+SELECT count(distinct cve_id) 
+FROM details 
+WHERE product_id  = #{product_id}
+and vulnerability_score LIKE "%MEDIUM%" 
+</select>
+
+<select id="getLow"  parameterType="String" resultType="int">
+SELECT count(distinct cve_id) 
+FROM details 
+WHERE product_id  = #{product_id}
+and vulnerability_score LIKE "%LOW%" 
+</select>
+
+
+
+
+
+</mapper>
